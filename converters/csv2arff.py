@@ -35,7 +35,10 @@ def convert(filename, relation, types, header):
             print '@attribute x%s %s' % (i, type_)
         print '%' * 79
         print '@data'
-        writer = csv.writer(sys.stdout)
+        writer = csv.writer(
+            sys.stdout, doublequote=False,
+            quoting=csv.QUOTE_NONNUMERIC,
+            escapechar='\\')
         while True:
             try:
                 line = reader.next()
