@@ -1,6 +1,6 @@
 Very simple csv to arff file converter.
 
-Only numeric and string types are supported at present.
+Only numeric, string and nominal types are supported at present.
 
 Usage:
 
@@ -12,7 +12,10 @@ Typespec is a comma separated list of types which represent
 the types of the data columns and will be used to
 generate the @attribute lines of the arff file.
 No type checking is done, it is up to the user to
-ensure correct types. Valid types are string and numeric.
+ensure correct types. Valid types are string, numeric and nominal.
+If a column type is specified as nominal, the script will
+automatically collect the values it can take and output them
+in the header.
 
 Example Usage:
 
